@@ -2,6 +2,8 @@ package br.edu.ufam.icomp.plaintext;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,5 +25,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         Log.i("MainActivity", "main view created");
+    }
+
+    public void signInButtonClicked(View view) {
+        Toast.makeText(this, "Olá!", Toast.LENGTH_SHORT).show();
     }
 }
