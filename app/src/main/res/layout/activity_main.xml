@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:foregroundTint="#FFFFFF"
-        android:text="PlainText"
+        android:text="@string/app_name"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/loginToolbar"
@@ -34,7 +34,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingLeft="0dp"
+        android:paddingStart="0dp"
         android:paddingEnd="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,12 +44,12 @@
         app:layout_constraintVertical_bias="1.0">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/loginInfoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="88dp"
-            android:text="Digite suas credenciais para continuar"
             android:textAlignment="center"
+            android:text="@string/login_info_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layoutSlogan" />
@@ -60,18 +60,22 @@
             android:layout_height="48dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
+            android:autofillHints="login"
             android:ems="10"
             android:inputType="text"
+            android:hint="@string/username"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/loginInfoText" />
 
         <EditText
             android:id="@+id/passwordTextView"
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:layout_marginTop="17dp"
+            android:autofillHints="password"
             android:ems="10"
             android:inputType="textPassword"
+            android:hint="@string/password"
             app:layout_constraintEnd_toEndOf="@+id/loginTextView"
             app:layout_constraintStart_toStartOf="@+id/loginTextView"
             app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
@@ -81,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Login"
+            android:text="@string/login"
             app:layout_constraintBottom_toBottomOf="@+id/loginTextView"
             app:layout_constraintEnd_toStartOf="@+id/loginTextView"
             app:layout_constraintStart_toStartOf="parent" />
@@ -91,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="19dp"
             android:layout_marginTop="24dp"
-            android:text="Senha"
+            android:text="@string/password"
             app:layout_constraintBottom_toBottomOf="@+id/passwordTextView"
             app:layout_constraintStart_toStartOf="@+id/loginText"
             app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
@@ -101,16 +105,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Salvar informações de login"
+            android:text="@string/login_save_infos"
             app:layout_constraintStart_toStartOf="@+id/passwordTextView"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/enterButton"
+            android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Entrar"
+            android:text="@string/sign_in"
             app:backgroundTint="#5625BA"
             app:cornerRadius="5dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -128,12 +132,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/quoteText"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
                 android:layout_marginEnd="32dp"
-                android:text="&quot;O gerenciador de senhas mais seguro&quot;\nBob e Alice"
+                android:text="@string/login_slogan_quote"
                 android:textAlignment="center"
                 android:textColor="#FBF7FF"
                 android:textSize="18sp"
