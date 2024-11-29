@@ -1,5 +1,7 @@
 package br.edu.ufam.icomp.plaintext;
 
+import static android.app.ProgressDialog.show;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -42,12 +45,23 @@ public class MainActivity extends AppCompatActivity {
         String login = loginTextView.getText().toString();
         String msg = "Olá " + login + "!!";
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-        //Intent intent = new Intent(this, ListActivity.class);
+
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.putExtra("login", login);
+        startActivity(intent);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-//        switch(item.getItemId()) {
-//
-//        }
+        switch(item.getItemId()) {
+            case R.id.mainMenuAbout:
+                AlertDialog.Builder alert = new AlertDialog.Builder((this));
+                alert.setMessage("PlainText gerenciador de senhas v1.0")
+                        .setNeutralButton("Ok", null)
+                        .show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }
