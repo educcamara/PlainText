@@ -52,16 +52,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.mainMenuAbout:
-                AlertDialog.Builder alert = new AlertDialog.Builder((this));
-                alert.setMessage("PlainText gerenciador de senhas v1.0")
-                        .setNeutralButton("Ok", null)
-                        .show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
+        if (item.getItemId() == R.id.mainMenuAbout) {
+            AlertDialog.Builder alert = new AlertDialog.Builder((this));
+            alert.setMessage("PlainText gerenciador de senhas v1.0")
+                    .setNeutralButton("Ok", null)
+                    .show();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }
