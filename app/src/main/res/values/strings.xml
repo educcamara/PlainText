@@ -7,4 +7,6 @@
     <string name="login_save_infos">Salvar informações de login</string>
     <string name="sign_in">Entrar</string>
     <string name="username">Nome</string>
+    <string name="settings">Configurações</string>
+    <string name="about">Sobre</string>
 </resources>
