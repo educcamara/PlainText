@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PlainText</string>
     <string name="login_info_text">Digite suas credenciais para continuar</string>
-    <string name="login_slogan_quote">&quot;O gerenciador de senhas mais seguro&quot;\nBob e Alice</string>
+    <string name="login_slogan_quote">\"O gerenciador de senhas mais seguro\"\nBob e Alice</string>
     <string name="login">Login</string>
     <string name="password">Senha</string>
     <string name="login_save_infos">Salvar informações de login</string>
