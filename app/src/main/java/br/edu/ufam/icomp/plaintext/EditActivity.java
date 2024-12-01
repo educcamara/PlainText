@@ -53,7 +53,7 @@ public class EditActivity extends AppCompatActivity {
         }
 
         MaterialButton saveButton = findViewById(R.id.savePasswordButton);
-        saveButton.setEnabled(false);
+        saveButton.setEnabled(editName.getText().length() > 0 && editLogin.getText().length() > 0 && editPassword.getText().length() > 0);
 
 
         TextWatcher textWatcher = new TextWatcher() {

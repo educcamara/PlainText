@@ -42,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
         EditText loginTextView = findViewById(R.id.loginTextView);
         EditText passwordTextView = findViewById(R.id.passwordTextView);
         MaterialButton signInButton = findViewById(R.id.loginButton);
-        signInButton.setEnabled(false);
+
+        String login = loginTextView.getText().toString().trim();
+        String password = passwordTextView.getText().toString().trim();
+
+        signInButton.setEnabled(!login.isEmpty() && !password.isEmpty());
 
         //TODO: For debug only
         loginTextView.setText("a");
