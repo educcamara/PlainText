@@ -25,12 +25,13 @@ class PasswordsAdapter extends RecyclerView.Adapter<PasswordsViewHolder> {
 
    public void update() { passwords = passwordDAO.getList(); }
 
+    @Override
    public PasswordsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
        ConstraintLayout v = (ConstraintLayout) LayoutInflater
                .from(parent.getContext())
                .inflate(R.layout.list_item, parent, false);
-       PasswordsViewHolder vh = new PasswordsViewHolder(v, context);
-       return vh;
+
+       return new PasswordsViewHolder(v, context);
    }
 
    public void onBindViewHolder(PasswordsViewHolder holder, int position) {

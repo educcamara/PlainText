@@ -1,11 +1,14 @@
 package br.edu.ufam.icomp.plaintext;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -51,5 +54,25 @@ public class ListActivity extends AppCompatActivity {
     public void onButtonClicked(View view) {
         Intent intent = new Intent(this, EditActivity.class);
         startActivity(intent);
+    }
+}
+
+class PasswordsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public Context context;
+    public TextView login, name;
+    public int id;
+
+    public PasswordsViewHolder(ConstraintLayout v, Context context) {
+        super(v);
+        this.context = context;
+        name = v.findViewById(R.id.itemName);
+        login = v.findViewById(R.id.itemLogin);
+        v.setOnClickListener(this);
+    }
+
+    public void onClick(View v) {
+        Intent intent = new Intent(context, EditActivity.class);
+        intent.putExtra("passwordId", id);
+        context.startActivity(intent);
     }
 }

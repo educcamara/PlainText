@@ -6,6 +6,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,9 +20,9 @@ import br.edu.ufam.icomp.plaintext.dao.PasswordDAO;
 import br.edu.ufam.icomp.plaintext.model.Password;
 
 public class EditActivity extends AppCompatActivity {
-    private PasswordDAO passwordDAO;
+    private PasswordDAO passwordDAO = new PasswordDAO(this);
     private int passwordId;
-    private EditText editName, editLogin, editPassword, editNotes;
+    private TextView editName, editLogin, editPassword, editNotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

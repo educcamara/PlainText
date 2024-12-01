@@ -17,7 +17,7 @@ public class PasswordDAO {
     }
 
     public ArrayList<Password> getList() {
-        if (passwordsList.size() == 0) {
+        if (passwordsList.isEmpty()) {
             passwordsList.add(new Password(0, "Facebook", "dovahkiin@gmail.com",
                     "FusRoDah123", ""));
             passwordsList.add(new Password(1, "GMail", "dovahkiin",

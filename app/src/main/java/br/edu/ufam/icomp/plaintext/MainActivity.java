@@ -44,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
         MaterialButton signInButton = findViewById(R.id.loginButton);
         signInButton.setEnabled(false);
 
+        //TODO: For debug only
+        loginTextView.setText("a");
+        passwordTextView.setText("1");
+        signInButtonClicked(null);
+
+
         // Create new text watcher
         TextWatcher textWatcher = new TextWatcher() {
             @Override
