@@ -12,5 +12,6 @@
     <string name="add_password">Adicionar senha</string>
     <string name="notes">Notas</string>
     <string name="save">Salvar</string>
-    <string name="add_name">Adicionar nome</string>
+    <string name="add_name">Nome</string>
+    <string name="example">TextView</string>
 </resources>
