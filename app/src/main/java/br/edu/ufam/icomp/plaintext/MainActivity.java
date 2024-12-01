@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         EditText loginTextView = findViewById(R.id.loginTextView);
         EditText passwordTextView = findViewById(R.id.passwordTextView);
         MaterialButton signInButton = findViewById(R.id.loginButton);
+        signInButton.setEnabled(false);
 
         // Create new text watcher
         TextWatcher textWatcher = new TextWatcher() {
@@ -53,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 // Check if both fields are filled and if so, enable the button
+                String login = loginTextView.getText().toString();
+                String password = passwordTextView.getText().toString();
+
+                signInButton.setEnabled(!login.isEmpty() && !password.isEmpty());
             }
 
             @Override
@@ -69,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+
+        // Add the text watcher to the login and password fields
+        loginTextView.addTextChangedListener(textWatcher);
+        passwordTextView.addTextChangedListener(textWatcher);
     }
 
     @Override
