@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,11 +17,18 @@ public class PasswordDAO {
     private Context context;
     private static ArrayList<Password> passwordsList = new ArrayList<>();
 
-    private SQLiteDatabase database;
+    static private SQLiteDatabase database;
 
     public PasswordDAO(Context context) {
         this.context = context;
-        this.database = (new Database(context)).getWritableDatabase();
+        if (database == null) {
+            try {
+                database = (new Database(context)).getWritableDatabase();
+            } catch (SQLException e) {
+                Toast.makeText(context, "Erro! " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("PasswordDAO", e.getMessage());
+            }
+        }
     }
 
     public ArrayList<Password> getList() {
