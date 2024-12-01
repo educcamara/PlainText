@@ -29,15 +29,15 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/addName"
+        app:layout_constraintBottom_toBottomOf="@+id/editName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addName"
+        app:layout_constraintTop_toTopOf="@+id/editName"
         app:srcCompat="@drawable/baseline_accessibility_24" />
 
     <EditText
-        android:id="@+id/addName"
+        android:id="@+id/editName"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="85dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
@@ -54,21 +54,22 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/addLogin"
+        app:layout_constraintBottom_toBottomOf="@+id/editLogin"
         app:layout_constraintStart_toStartOf="@+id/imageName"
-        app:layout_constraintTop_toTopOf="@+id/addLogin"
+        app:layout_constraintTop_toTopOf="@+id/editLogin"
         app:srcCompat="@drawable/baseline_account_circle_24" />
 
     <EditText
-        android:id="@+id/addLogin"
+        android:id="@+id/editLogin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="26dp"
-        android:ems="10" android:hint="@string/login"
+        android:ems="10"
+        android:hint="@string/login"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/addName"
-        app:layout_constraintStart_toStartOf="@+id/addName"
-        app:layout_constraintTop_toBottomOf="@+id/addName" />
+        app:layout_constraintEnd_toEndOf="@+id/editName"
+        app:layout_constraintStart_toStartOf="@+id/editName"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
 
     <ImageView
         android:id="@+id/imagePassword"
@@ -76,22 +77,23 @@
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
         android:contentDescription="@string/password"
-        app:layout_constraintBottom_toBottomOf="@+id/addPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/editPassword"
         app:layout_constraintStart_toStartOf="@+id/imageLogin"
-        app:layout_constraintTop_toTopOf="@+id/addPassword"
+        app:layout_constraintTop_toTopOf="@+id/editPassword"
         app:srcCompat="@drawable/lock_icon" />
 
     <EditText
-        android:id="@+id/addPassword"
-        android:layout_width="0dp" android:layout_marginTop="26dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/editPassword"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="26dp"
         android:autofillHints="@string/password"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/addLogin"
-        app:layout_constraintStart_toStartOf="@+id/addLogin"
-        app:layout_constraintTop_toBottomOf="@+id/addLogin"
+        app:layout_constraintEnd_toEndOf="@+id/editLogin"
+        app:layout_constraintStart_toStartOf="@+id/editLogin"
+        app:layout_constraintTop_toBottomOf="@+id/editLogin"
         tools:ignore="TextFields" />
 
     <ImageView
@@ -104,14 +106,14 @@
         app:srcCompat="@drawable/baseline_article_24" />
 
     <EditText
-        android:id="@+id/addNotes" android:layout_width="0dp"
+        android:id="@+id/editNotes" android:layout_width="0dp"
         android:layout_height="120dp"
         android:layout_marginTop="22dp" android:ems="10"
         android:gravity="start|top" android:hint="@string/notes"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/addPassword"
-        app:layout_constraintStart_toStartOf="@+id/addPassword"
-        app:layout_constraintTop_toBottomOf="@+id/addPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/editPassword"
+        app:layout_constraintStart_toStartOf="@+id/editPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/savePasswordButton"

@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/itemsList"
+    android:id="@+id/listLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/item"
+        android:id="@+id/itemsList"
         android:layout_width="0dp"
         android:layout_height="729dp"
         android:layout_marginTop="32dp"
@@ -27,10 +27,12 @@
         android:backgroundTint="@color/purple"
         android:clickable="true"
         android:contentDescription="@string/add_password"
+        android:focusable="true"
         android:foreground="@drawable/add"
         android:foregroundTint="@color/white"
+        android:onClick="onButtonClicked"
         android:tint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/item"
+        app:layout_constraintEnd_toEndOf="@+id/itemsList"
         app:rippleColor="#FFFFFF" />
 </androidx.constraintlayout.widget.ConstraintLayout>
