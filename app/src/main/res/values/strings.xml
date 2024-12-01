@@ -10,4 +10,7 @@
     <string name="settings">Configurações</string>
     <string name="about">Sobre</string>
     <string name="add_password">Adicionar senha</string>
+    <string name="notes">Notas</string>
+    <string name="save">Salvar</string>
+    <string name="add_name">Adicionar nome</string>
 </resources>

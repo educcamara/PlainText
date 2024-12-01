@@ -69,9 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 String trimmedPassword = password.trim();
                 if (!trimmedLogin.isEmpty() && !trimmedPassword.isEmpty()) {
                     signInButton.setEnabled(true);
-                } else {
-                    signInButton.setEnabled(false);
+                    return;
                 }
+
+                signInButton.setEnabled(false);
             }
         };
 
