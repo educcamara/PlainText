@@ -1,6 +1,7 @@
 package br.edu.ufam.icomp.plaintext;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +21,13 @@ public class ListActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        String login = getIntent().getStringExtra("login");
+
+        Toast.makeText(this, "Oi, " + login + "!", Toast.LENGTH_SHORT).show();
     }
 }
