@@ -85,6 +85,10 @@ public class EditActivity extends AppCompatActivity {
                 }
             }
         };
+
+        editName.addTextChangedListener(textWatcher);
+        editLogin.addTextChangedListener(textWatcher);
+        editPassword.addTextChangedListener(textWatcher);
     }
 
     public void onSaveClicked(View view) {
