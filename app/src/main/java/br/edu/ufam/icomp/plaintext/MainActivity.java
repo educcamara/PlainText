@@ -3,7 +3,10 @@ package br.edu.ufam.icomp.plaintext;
 import static android.app.ProgressDialog.show;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +20,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.preference.PreferenceManager;
+
+import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,12 +32,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.layoutLogin), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainLoginLayout), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
         Log.i("MainActivity", "main view created");
+
+        EditText loginTextView = findViewById(R.id.loginTextView);
+        EditText passwordTextView = findViewById(R.id.passwordTextView);
+        MaterialButton signInButton = findViewById(R.id.loginButton);
+
+        // Create new text watcher
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Do nothing
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Check if both fields are filled and if so, enable the button
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Trim the text
+                String login = loginTextView.getText().toString();
+                String password = passwordTextView.getText().toString();
+                String trimmedLogin = login.trim();
+                String trimmedPassword = password.trim();
+                if (!trimmedLogin.isEmpty() && !trimmedPassword.isEmpty()) {
+                    signInButton.setEnabled(true);
+                } else {
+                    signInButton.setEnabled(false);
+                }
+            }
+        };
     }
 
     @Override
@@ -41,10 +78,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signInButtonClicked(View view) {
-        EditText loginTextView = findViewById(R.id.loginTextView);
-        String login = loginTextView.getText().toString();
-        String msg = "Olá " + login + "!!";
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String prefLogin = sharedPreferences.getString("login", "");
+        String prefPass  = sharedPreferences.getString("password", "");
+
+        String login = ((EditText) findViewById(R.id.loginTextView)).getText().toString();
+        String password = ((EditText) findViewById(R.id.passwordTextView)).getText().toString();
+
+        if (!login.equals(prefLogin) || !password.equals(prefPass)) {
+            Toast.makeText(this, "Login ou senha incorretos", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         Intent intent = new Intent(this, ListActivity.class);
         intent.putExtra("login", login);
@@ -57,6 +101,10 @@ public class MainActivity extends AppCompatActivity {
             alert.setMessage("PlainText gerenciador de senhas v1.0")
                     .setNeutralButton("Ok", null)
                     .show();
+            return true;
+        } else if (item.getItemId() == R.id.mainMenuSettings) {
+            Intent intentConfig = new Intent(this, PreferencesActivity.class);
+            startActivity(intentConfig);
             return true;
         }
         return super.onOptionsItemSelected(item);
