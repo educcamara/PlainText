@@ -48,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
         signInButton.setEnabled(!login.isEmpty() && !password.isEmpty());
 
-        //TODO: For debug only
-        loginTextView.setText("a");
-        passwordTextView.setText("1");
-        signInButtonClicked(null);
+//        loginTextView.setText("a");
+//        passwordTextView.setText("1");
+//        signInButtonClicked(null);
 
 
         // Create new text watcher
