@@ -9,4 +9,5 @@
     <string name="username">Nome</string>
     <string name="settings">Configurações</string>
     <string name="about">Sobre</string>
+    <string name="add_password">Adicionar senha</string>
 </resources>

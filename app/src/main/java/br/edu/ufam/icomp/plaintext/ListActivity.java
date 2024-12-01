@@ -1,6 +1,8 @@
 package br.edu.ufam.icomp.plaintext;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -20,7 +22,7 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        recyclerView = findViewById(R.id.itemsListem);
+        recyclerView = findViewById(R.id.itemsList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new PasswordsAdapter(this);
@@ -40,5 +42,10 @@ public class ListActivity extends AppCompatActivity {
         String login = getIntent().getStringExtra("login");
 
         Toast.makeText(this, "Oi, " + login + "!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onButtonClicket(View view) {
+        Intent intent = new Intent(this, EditActivity.class);
+        startActivity(intent);
     }
 }

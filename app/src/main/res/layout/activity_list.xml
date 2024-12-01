@@ -8,11 +8,29 @@
     tools:context=".ListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/item"
         android:layout_width="0dp"
         android:layout_height="729dp"
         android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/list_item" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/purple"
+        android:clickable="true"
+        android:contentDescription="@string/add_password"
+        android:foreground="@drawable/add"
+        android:foregroundTint="@color/white"
+        android:tint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/item"
+        app:rippleColor="#FFFFFF" />
 </androidx.constraintlayout.widget.ConstraintLayout>

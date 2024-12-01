@@ -1,6 +1,7 @@
 package br.edu.ufam.icomp.plaintext;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +23,8 @@ class PasswordsViewHolder extends RecyclerView.ViewHolder implements View.OnClic
    }
 
    public void onClick(View v) {
-       Toast.makeText(context, "Olá " + this.login.getText().toString(), Toast.LENGTH_LONG)
-            .show();
+       Intent intent = new Intent(context, EditActivity.class);
+       intent.putExtra("passwordId", id);
+       context.startActivity(intent);
    }
 }
