@@ -12,16 +12,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lock_icon" />
+        app:srcCompat="@drawable/item_icon" />
+
     <TextView
         android:id="@+id/itemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
         android:text="@string/example"
         android:textColor="#39393a"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/itemLogin" app:layout_constraintStart_toEndOf="@+id/itemIcon"
+        app:layout_constraintBottom_toTopOf="@+id/itemLogin"
+        app:layout_constraintStart_toEndOf="@+id/itemIcon"
         app:layout_constraintTop_toTopOf="@+id/itemIcon" />
     <TextView
         android:id="@+id/itemLogin"
@@ -40,5 +42,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow_right" />
+        app:srcCompat="@drawable/arrow_left" />
 </androidx.constraintlayout.widget.ConstraintLayout>
